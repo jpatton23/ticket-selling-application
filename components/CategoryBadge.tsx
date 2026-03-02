@@ -1,10 +1,10 @@
 import { Category } from '@/types/database'
 
 const CATEGORY_STYLES: Record<Category, { label: string; className: string }> = {
-  club: { label: '🎵 Club', className: 'bg-purple-100 text-purple-700' },
-  sports: { label: '⚽ Sports', className: 'bg-green-100 text-green-700' },
-  racing: { label: '🐎 Racing', className: 'bg-yellow-100 text-yellow-700' },
-  other: { label: '✨ Other', className: 'bg-blue-100 text-blue-700' },
+  club: { label: '🎵 Club', className: 'bg-purple-500/20 text-purple-300' },
+  sports: { label: '⚽ Sports', className: 'bg-green-500/20 text-green-300' },
+  racing: { label: '🐎 Racing', className: 'bg-yellow-500/20 text-yellow-300' },
+  other: { label: '✨ Other', className: 'bg-blue-500/20 text-blue-300' },
 }
 
 export default function CategoryBadge({ category }: { category: Category }) {

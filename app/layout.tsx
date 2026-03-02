@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         <Nav />
-        <main className="min-h-screen bg-gray-50">
+        <main className="min-h-screen bg-[#0a0a0a]">
           {children}
         </main>
       </body>
