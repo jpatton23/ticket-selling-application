@@ -96,3 +96,22 @@ SELECT
   ) * INTERVAL '1 day')::DATE,
   'upcoming'
 FROM events WHERE title = 'Tuesday Club @ Corp';
+
+-- Add a sample ticket listing for Code Fridays
+-- Note: This requires a user profile to exist. Create a demo seller profile first.
+INSERT INTO profiles (id, name, email, university, rating, rating_count) VALUES
+('00000000-0000-0000-0000-000000000001', 'Demo Seller', 'demo@sheffield.ac.uk', 'UoS', 4.5, 10)
+ON CONFLICT (id) DO NOTHING;
+
+INSERT INTO ticket_listings (occurrence_id, seller_id, price, quantity, notes, status)
+SELECT 
+  eo.id,
+  '00000000-0000-0000-0000-000000000001',
+  15.00,
+  2,
+  'Two tickets available! Great night guaranteed 🎉',
+  'available'
+FROM event_occurrences eo
+JOIN events e ON eo.event_id = e.id
+WHERE e.title = 'Code Fridays @ Foundry'
+LIMIT 1;
