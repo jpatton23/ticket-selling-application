@@ -15,7 +15,7 @@ A peer-to-peer ticket marketplace for Sheffield University and Sheffield Hallam 
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | Next.js 14+ (App Router) |
+| Framework | Next.js 16 (App Router) |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
 | Database | Supabase (PostgreSQL) |
