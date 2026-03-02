@@ -69,11 +69,11 @@ export default function SignUpPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="bg-white p-8 rounded-xl shadow-md max-w-md w-full text-center">
-          <div className="text-green-500 text-5xl mb-4">✓</div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Check your email!</h2>
-          <p className="text-gray-600">
+      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a]">
+        <div className="bg-[#111111] border border-white/10 p-8 rounded-xl max-w-md w-full text-center">
+          <div className="text-green-400 text-5xl mb-4">✓</div>
+          <h2 className="text-2xl font-bold text-white mb-2">Check your email!</h2>
+          <p className="text-gray-400">
             We sent a verification link to <strong>{email}</strong>. Click it to activate your account.
           </p>
         </div>
@@ -82,41 +82,41 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white p-8 rounded-xl shadow-md max-w-md w-full">
-        <h1 className="text-2xl font-bold text-gray-800 mb-2">Create Account</h1>
-        <p className="text-gray-500 text-sm mb-6">Sheffield students</p>
+    <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a]">
+      <div className="bg-[#111111] border border-white/10 p-8 rounded-xl max-w-md w-full">
+        <h1 className="text-2xl font-bold text-white mb-2">Create Account</h1>
+        <p className="text-gray-400 text-sm mb-6">Sheffield students</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <label className="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
             <input
               type="text"
               value={name}
               onChange={e => setName(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full bg-[#1a1a1a] border border-white/10 text-white placeholder:text-gray-500 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
               placeholder="Your name"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label className="block text-sm font-medium text-gray-300 mb-1">Email</label>
             <input
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full bg-[#1a1a1a] border border-white/10 text-white placeholder:text-gray-500 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
               placeholder="your@email.com"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">University</label>
+            <label className="block text-sm font-medium text-gray-300 mb-1">University</label>
             <select
               value={university}
               onChange={e => setUniversity(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full bg-[#1a1a1a] border border-white/10 text-white rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
               <option value="" disabled>Select your university</option>
               <option value="UoS">University of Sheffield</option>
@@ -124,20 +124,20 @@ export default function SignUpPage() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-medium text-gray-300 mb-1">Password</label>
             <input
               type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
               required
               minLength={6}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full bg-[#1a1a1a] border border-white/10 text-white placeholder:text-gray-500 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
               placeholder="At least 6 characters"
             />
           </div>
 
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}
@@ -152,15 +152,15 @@ export default function SignUpPage() {
         </form>
 
         <div className="flex items-center my-4">
-          <div className="flex-1 border-t border-gray-200" />
-          <span className="px-3 text-sm text-gray-400">or continue with</span>
-          <div className="flex-1 border-t border-gray-200" />
+          <div className="flex-1 border-t border-white/10" />
+          <span className="px-3 text-sm text-gray-500">or continue with</span>
+          <div className="flex-1 border-t border-white/10" />
         </div>
 
         <div className="space-y-3">
           <button
             onClick={() => handleOAuth('google')}
-            className="w-full flex items-center justify-center gap-3 border border-gray-300 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            className="w-full flex items-center justify-center gap-3 bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-5 h-5">
               <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -172,9 +172,9 @@ export default function SignUpPage() {
           </button>
           <button
             onClick={() => handleOAuth('apple')}
-            className="w-full flex items-center justify-center gap-3 border border-gray-300 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            className="w-full flex items-center justify-center gap-3 bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 transition-colors"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 814 1000" className="w-5 h-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 814 1000" className="w-5 h-5 fill-white">
               <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 376.8 0 270.3 0 165.9 0 74.7 54.8 26.1 106.1 26.1c50.3 0 90.8 33.9 121.4 33.9 29.1 0 75.4-36 132.5-36 52.4 0 107.9 19.7 146.4 73.3zm-41.7-107.4c-19.7-24-38.6-57.1-38.6-98.5 0-5.8.6-11.6 1.9-16.8 40.8 1.9 90.8 27.2 120.7 58.5 22.5 23.4 41.4 57.7 41.4 99.7 0 6.4-.6 12.8-1.9 19.4-38.6-1.2-90.8-27.2-123.5-62.3z"/>
             </svg>
             Continue with Apple
@@ -183,7 +183,7 @@ export default function SignUpPage() {
 
         <p className="text-center text-sm text-gray-500 mt-4">
           Already have an account?{' '}
-          <Link href="/auth/login" className="text-purple-600 hover:underline">
+          <Link href="/auth/login" className="text-purple-400 hover:text-purple-300">
             Log in
           </Link>
         </p>

@@ -29,8 +29,8 @@ export default function EventsClient({ occurrences }: { occurrences: OccurrenceW
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Upcoming Events</h1>
-      <p className="text-gray-500 mb-6">Find tickets for Sheffield&apos;s best nights out</p>
+      <h1 className="text-3xl font-bold text-white mb-2">Upcoming Events</h1>
+      <p className="text-gray-400 mb-6">Find tickets for Sheffield&apos;s best nights out</p>
 
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -39,7 +39,7 @@ export default function EventsClient({ occurrences }: { occurrences: OccurrenceW
           placeholder="Search events..."
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="border border-gray-300 rounded-lg px-4 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          className="bg-[#1a1a1a] border border-white/10 text-white placeholder:text-gray-500 rounded-lg px-4 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-purple-500"
         />
         <div className="flex gap-2 flex-wrap">
           {CATEGORIES.map(cat => (
@@ -48,8 +48,8 @@ export default function EventsClient({ occurrences }: { occurrences: OccurrenceW
               onClick={() => setCategory(cat.value)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 category === cat.value
-                  ? 'bg-purple-600 text-white'
-                  : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
+                  ? 'bg-white text-black'
+                  : 'bg-[#1a1a1a] border border-white/10 text-gray-300 hover:bg-white/10'
               }`}
             >
               {cat.label}
@@ -87,9 +87,9 @@ function EventCard({ occurrence }: { occurrence: OccurrenceWithCount }) {
   })
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
+    <div className="bg-[#1a1a1a] rounded-xl border border-white/5 overflow-hidden hover:border-white/20 transition-all">
       {event.image_url && (
-        <div className="h-48 overflow-hidden">
+        <div className="h-56 overflow-hidden">
           <img
             src={event.image_url}
             alt={event.title}
@@ -99,29 +99,29 @@ function EventCard({ occurrence }: { occurrence: OccurrenceWithCount }) {
       )}
       <div className="p-4">
         <div className="flex items-start justify-between mb-2">
-          <h3 className="font-semibold text-gray-900 text-lg leading-tight">{event.title}</h3>
+          <h3 className="font-semibold text-white text-lg leading-tight">{event.title}</h3>
           <CategoryBadge category={event.category} />
         </div>
-        <p className="text-gray-500 text-sm mb-1">📍 {event.venue}</p>
-        <p className="text-gray-500 text-sm mb-1">📅 {dateFormatted}</p>
+        <p className="text-gray-400 text-sm mb-1">📍 {event.venue}</p>
+        <p className="text-gray-400 text-sm mb-1">📅 {dateFormatted}</p>
         {event.event_time && (
-          <p className="text-gray-500 text-sm mb-3">🕙 {event.event_time.slice(0, 5)}</p>
+          <p className="text-gray-400 text-sm mb-3">🕙 {event.event_time.slice(0, 5)}</p>
         )}
         <div className="flex items-center justify-between mb-4">
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-gray-400">
             {ticketCount > 0 ? `${ticketCount} ticket${ticketCount !== 1 ? 's' : ''} available` : 'No tickets yet'}
           </span>
         </div>
         <div className="flex gap-2">
           <Link
             href={`/events/${occurrence.id}`}
-            className="flex-1 bg-purple-600 hover:bg-purple-700 text-white text-center text-sm font-medium py-2 rounded-lg transition-colors"
+            className="flex-1 bg-purple-600 hover:bg-purple-500 text-white text-center text-sm font-medium py-2 rounded-lg transition-colors"
           >
             Buy
           </Link>
           <Link
             href={`/events/${occurrence.id}/sell`}
-            className="flex-1 bg-green-600 hover:bg-green-700 text-white text-center text-sm font-medium py-2 rounded-lg transition-colors"
+            className="flex-1 bg-green-600 hover:bg-green-500 text-white text-center text-sm font-medium py-2 rounded-lg transition-colors"
           >
             Sell
           </Link>

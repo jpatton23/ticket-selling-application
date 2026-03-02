@@ -31,9 +31,6 @@ export default async function HomePage() {
             Log In
           </Link>
         </div>
-        <p className="mt-6 text-purple-300 text-sm">
-          For @sheffield.ac.uk and @shu.ac.uk email addresses only
-        </p>
       </div>
     </div>
   )
